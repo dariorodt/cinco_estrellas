@@ -1,0 +1,57 @@
+/******************************************************************************
+
+	ChatWidget is a simple embeddable chat UI for websites.
+	
+	Is now in a very early development stage so, until version 1+,  use it 
+	on your own risk.
+	
+	Author: Dario Alberto Rodriguez Tenorio <dariorodt@gmail.com>
+	Telegram, Skype: @dariorodt
+
+******************************************************************************/
+
+.chat-frame {
+	border: 1px solid #8A8A8A;
+	background-color: #DEDEDE;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.msg-box {
+	display: flex;
+}
+
+.msg-box-lf {
+	justify-content: flex-start;
+}
+
+.msg-box-rg {
+	justify-content: flex-end;
+}
+
+.user-img {
+	margin: 0 10px 0;
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+}
+
+.msg-baloon {
+	margin: 10px 0 0 0;
+	padding: 10px;
+	max-width: 60%;
+	color: white;
+	background-color: #6F3592;
+}
+.msg-baloon em {
+	border-bottom: 1px dotted;
+}
+
+.msg-baloon-lf {
+	border-radius: 0 20px 20px 20px;
+}
+
+.msg-baloon-rg {
+	border-radius: 20px 0 20px 20px;
+}
