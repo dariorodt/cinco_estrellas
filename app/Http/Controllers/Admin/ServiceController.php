@@ -53,11 +53,19 @@ class ServiceController extends Controller
 	public function store(Request $request)
 	{
 		$request->validate([
+			'icon' => 'required|image',
 			'name' => 'required|string',
 			'description' => 'required|string'
 		]);
 		
-		$service = new Service();
+		$image = $request->file('icon');
+		$imagename = time().'.'.$image->getClientOriginalExtension();
+		$destination_path = public_path('/uploads/services/');
+		$image->move($destination_path, $imagename);
+		
+		$service = new Service;
+		
+		$service->icon = 'uploads/services/'.$imagename;
 		
 		$service->fill($request->input())->save();
 		
@@ -92,8 +100,23 @@ class ServiceController extends Controller
 	public function update(Request $request, Service $service)
 	{
 		//dd($request->all());
-		$service->update($request->input());
-		$service->save();
+		$request->validate([
+			'icon' => 'required|image',
+			'name' => 'required|string',
+			'description' => 'required|string'
+		]);
+		
+		if($request->file('icon'))
+		{
+			$image = $request->file('icon');
+			$imagename = time().'.'.$image->getClientOriginalExtension();
+			$destination_path = public_path('/uploads/services/');
+			$image->move($destination_path, $imagename);
+			
+			$service->icon = 'uploads/services/'.$imagename;
+		}
+		
+		$service->fill($request->input())->save();
 		
 		return back()->with('success', 'Servicio actualizado correctamente');
 	}

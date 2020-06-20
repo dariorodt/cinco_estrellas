@@ -85,7 +85,7 @@
 												<button type="submit" formaction="{{ route('worker.login') }}">Como Trabajador</button>
 											</div>
 											<div class="form-group">
-												<a href="#">¿Olvidaste tu contraseña?</a>
+												<a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
 											</div>
 										</form>
 									</div>

@@ -27,7 +27,8 @@
 		<div class="container">
 			<div class="row">
 
-				<form id="profile_form" action="{{ route('user.update_profile') }}" method="POST" enctype="multipart/form-data">
+				<form id="profile_form" action="{{ route('user.update_profile') }}" 
+				      method="POST" enctype="multipart/form-data">
 					@csrf
 				
 					{{-- Aside menu section --}}

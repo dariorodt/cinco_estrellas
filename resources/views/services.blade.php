@@ -36,10 +36,18 @@
 				<div class="col-md-12">
 					
 					@foreach ($services as $service)
-						<div class="directory-category-box text-center" style="height: 250px">
-							<span>
+						<div class="directory-category-box text-center" style="height: 300px; padding-top: 0 !important;">
+							{{-- <span>
 								<i class="fa {{ $service->fa_icon }}" aria-hidden="true"></i>
-							</span>
+							</span> --}}
+							@if ($service->icon)
+							<img src="{{ asset($service->icon) }}" alt="Service image"
+							     style="width: 100%; height: auto; object-fit: cover;">
+							@else
+							<img src="{{ asset('images/best-thing-6.jpg') }}" alt="Service image"
+							     style="width: 100%; height: auto; object-fit: cover;">
+							@endif
+							
 							<a href="{{ route('home') }}">
 								<h3>{{ $service->name }}</h3>
 							</a>

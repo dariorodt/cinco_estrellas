@@ -84,7 +84,7 @@
 												<a href="{{ route('login') }}">¿Eres cliente?</a>
 											</div>
 											<div class="form-group">
-												<a href="#">¿Olvidaste tu contraseña?</a>
+												<a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
 											</div>
 										</form>
 									</div>

@@ -45,10 +45,14 @@
 							<div class="row">
 								<div class="col-md-3"></div>
 								<div class="col-md-6">
-									<form role="form" action="{{ route('admin.service.update', $service) }}" method="POST">
+									<form role="form" action="{{ route('admin.service.update', $service) }}" method="POST"
+									      enctype="multipart/form-data">
 										@csrf
 										@method('PUT')
-										<div class="form-group">
+										
+										
+										
+										{{-- <div class="form-group">
 											<label for="fa-icon">Elija un icono representativo</label>
 											<select id="icon-select" name="fa_icon" class="form-control" 
 											        onchange="
@@ -60,7 +64,34 @@
 												@endforeach
 											</select>
 											<i id="icon" class="fa {{ $service->fa_icon }}" style="font-size: 50px; margin-top: 5px"></i>
+										</div> --}}
+										
+										
+										
+										<div class="form-group">
+											<label>Selecciones una imagen para la categoría</label>
+											<p class="help-block">Debe ser un archivo de imagen en formato .PNG con fondo transparente.</p>
+											
+											@if ($service->icon)
+												<img src="{{ asset($service->icon) }}" alt="" 
+												     id="profile_picture" onclick="selectImage('pi-input')" 
+												     width="100" height="auto" style="object-fit: cover;">
+											@else
+												<img src="{{ asset('images/best-thing-8.jpg') }}" alt="" 
+												     id="profile_picture" onclick="selectImage('pi-input')" 
+												     width="100" height="auto" style="object-fit: cover;">
+											@endif
+											@error('icon')
+											<p class="text-danger">{{ $message }}</p>
+											@enderror
+											
+											<input style="display: none;" id="pi-input" name="icon" type="file" accept=".png" 
+											       onchange="loadImage(this, 'profile_picture')">
+											
 										</div>
+										
+										
+										
 										<div class="form-group">
 											<label for="name">Nombre que desea dar al servicio</label>
 											<input type="text" name="name" class="form-control" value="{{ $service->name }}" required autofocus>
@@ -89,4 +120,36 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript">
+		/**
+		 * When the file input control changesits state 
+		 * this function updates the image shown in de 
+		 * preview control.
+		 */
+		function loadImage(input, preview) {
+			
+			console.log('loadImage: called from' + input);
+			
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				var image = document.getElementById(preview);
+
+				reader.onload = function (e) {
+					image.src = e.target.result;
+					image.style.display = 'block';
+				};
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		
+		/**
+		 * Open the select file dialog when the preview image control 
+		 * is clicked.
+		 */
+		function selectImage(input) {
+			console.log('Image container clicked');
+			document.getElementById(input).click();
+		}
+	</script>
 @endsection
