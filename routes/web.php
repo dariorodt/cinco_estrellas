@@ -295,6 +295,9 @@ Route::prefix('/admin')->group(function() {
 	Route::post('finance/{payment}/payment-register', 'Admin\FinanceController@payment_register')->name('admin.finance.payment.register');
 	Route::get('finance/worker-payments', 'Admin\FinanceController@worker_payments')->name('admin.finance.worker.payments');
 	Route::get('finance/{worker_payment}/show_payment', 'Admin\FinanceController@show_payment')->name('admin.finance.show.payment');
-
+	
+	// Aplication configuration
+	Route::get('config/show', 'Admin\ConfigController@show')->name('admin.config.show');
+	Route::post('config/update', 'Admin\ConfigController@update')->name('admin.config.update');
 });
 

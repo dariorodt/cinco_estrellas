@@ -110,6 +110,13 @@
 							</div>
 								
 							<div class="row m_t20">
+								<div class="col-md-12">
+									<div class="alert alert-info">
+										<p>Tome en cuenta que el trabajador necesita un margen de tiempo para responder su solicitud. Contrate con una anticipación de, al menos, 72 horas, o seleccione en Servicio express si requiere ser atendido de inmediato.</p>
+										<p class="text-info"><strong>Habrá un cargo del 99% por urgencia.</strong></p>
+									</div>
+								</div>
+								
 								<div class="col-md-6 col-sm-6">
 									<div class="form-group {{ $errors->has('daterange') ? 'has-error' : '' }}">
 										<label for="finish-date">Fechas</label>
@@ -119,7 +126,7 @@
 								</div>
 								
 								<div class="col-md-3">
-									<dov class="form-group">
+									<div class="form-group">
 										<label>Hora de inicio</label>
 										<select class="form-control" name="start-time" required>
 											<option value="00:00">00:00</option>
@@ -173,11 +180,11 @@
 											<option value="24:00">24:00</option>
 											<option value="24:30">24:30</option>
 										</select>
-									</dov>
+									</div>
 								</div>
 								
 								<div class="col-md-3">
-									<dov class="form-group">
+									<div class="form-group">
 										<label>Hora de finalización</label>
 										<select class="form-control" name="finish-time" required>
 											<option value="00:00">00:00</option>
@@ -231,13 +238,14 @@
 											<option value="24:00">24:00</option>
 											<option value="24:30">24:30</option>
 										</select>
-									</dov>
+									</div>
 								</div>
 								
 								<div class="col-md-12">
-									<div class="alert alert-info">
-										<p>Tome en cuenta que el trabajador necesita un margen de tiempo para responder su solicitud.</p>
-										<p>Contrate con una anticipación de, al menos, 72 horas.</p>
+									<div class="form-group">
+										<label for="is_express">
+											<input type="checkbox" name="is_express"> Servicio express
+										</label>
 									</div>
 								</div>
 							</div>
@@ -282,8 +290,8 @@
 					format: "DD/MM/YYYY",
 					firstDay: 0
 				},
-				startDate: moment().startOf('hour').add(2, 'days'),
-    		endDate: moment().startOf('hour').add(3, 'days'),
+				startDate: moment().startOf('hour').add(3, 'days'),
+    		endDate: moment().startOf('hour').add(4, 'days'),
 			}, function(start, end, label) {
 				console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
 			});

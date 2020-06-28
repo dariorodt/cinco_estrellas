@@ -32,9 +32,11 @@
 					<div class="profile-leftbar">
 						<div id="profile-picture" class="profile-picture">
 							@if ($user->profile)
-								<img src="{{ asset($user->profile->image_path) }}" alt="" width="100%" height="100%" style="object-fit: cover;">
+								<img src="{{ asset($user->profile->image_path) }}" alt="" 
+								     width="100%" height="100%" style="object-fit: cover;">
 							@else
-								<img src="{{ asset('images/profile.jpg') }}" alt="" width="100%" height="100%" style="object-fit: cover;">
+								<img src="{{ asset('images/profile.jpg') }}" alt="" 
+								     width="100%" height="100%" style="object-fit: cover;">
 							@endif
 						</div>
 					</div>
@@ -52,14 +54,18 @@
 					
 					@if (session('success'))
 						<div class="alert alert-success alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 							{{ session('success') }}
 						</div>
 					@endif
 					
 					@if (session('warning'))
 						<div class="alert alert-warning alert-dismissible" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 							{{ session('warning') }}
 						</div>
 					@endif
@@ -73,7 +79,10 @@
 					@endif
 					
 					<div class="profile-login-bg">
-						<h2><span><i class="fa fa-sliders"></i></span> Mis solicitudes de <span>Servicio</span></h2>
+						<h2>
+							<span><i class="fa fa-sliders"></i>
+							</span> Mis solicitudes de <span>Servicio</span>
+						</h2>
 						<div class="row p_b30">
 							<div class="col-md-12">
 								<div class="listing-title-area">
@@ -100,17 +109,28 @@
 																{{ $this_order->status == 'closed' ? 'Cerrada' : '' }}
 																{{ $this_order->status == 'canceled' ? 'Cancelada' : '' }}
 															</span>
+															@if ($this_order->is_express)
+																<span class="badge badge-default">
+																	Express
+																</span>
+															@endif
 														</span>
 														<span class="date">{{ $this_order->created_at->isoFormat('LLL') }}</span>
 														<span class="pull-right">
-															<button type="submit" class="btn btn-link"><i class="fa fa-times" title="Eliminar"></i></button>
-															<a href="{{ route('user.order.edit', $this_order->id) }}" class="btn btn-link"><i class="fa fa-edit" title="Editar"></i></a>
+															<button type="submit" class="btn btn-link">
+																<i class="fa fa-times" title="Eliminar"></i>
+															</button>
+															<a href="{{ route('user.order.edit', $this_order->id) }}" class="btn btn-link">
+																<i class="fa fa-edit" title="Editar"></i>
+															</a>
 														</span>
 													</div>
 													<div class="body">
 														<div class="date">
-															<b>Desde:</b> {{ date_format(new DateTime($this_order->starting_date), 'd/m/Y') }}<br>
-															<b>Hasta:</b> {{ date_format(new DateTime($this_order->ending_date), 'd/m/Y') }}
+															<b>Desde:</b> 
+															{{ date_format(new DateTime($this_order->starting_date), 'd/m/Y') }}<br>
+															<b>Hasta:</b> 
+															{{ date_format(new DateTime($this_order->ending_date), 'd/m/Y') }}
 														</div>
 														<div class="time">
 															<b>Horario:</b> <br>
@@ -120,7 +140,9 @@
 															@if ($this_order->status == 'open' || $this_order->status == 'canceled')
 																@if ($this_order->applications->count())
 																	@foreach ($this_order->applications as $application)
-																		<img class="worker-img" src="{{ asset($application->worker->profile->image_path) }}" title="{{ $application->worker->profile->full_name() }}">
+																		<img class="worker-img" 
+																		     src="{{ asset($application->worker->profile->image_path) }}" 
+																		     title="{{ $application->worker->profile->full_name() }}">
 																	@endforeach
 																@else
 																	No tiene aplicaciones en este momento
@@ -142,7 +164,9 @@
 										<div class="form-group">
 											@if ($user->profile->status == 'active')
 												<button class="float-right">
-													<a href="{{ route('user.order.create') }}"><i class="fa fa-plus-square"></i> Añadir</a>
+													<a href="{{ route('user.order.create') }}">
+														<i class="fa fa-plus-square"></i> Añadir
+													</a>
 												</button>
 											@endif
 										</div>

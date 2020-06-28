@@ -9,7 +9,7 @@ class ServiceOrder extends Model
 	/**
 	 * Mass assignment asstributes
 	 */
-	protected $fillable = [ 'user_id', 'worker_id', 'admin_id', 'service_id', 'status', 'starting_date', 'ending_date', 'starting_time', 'ending_time', 'region', 'comunity', 'city', 'aditional_info' ];
+	protected $fillable = [ 'user_id', 'worker_id', 'admin_id', 'service_id', 'status', 'is_express', 'starting_date', 'ending_date', 'starting_time', 'ending_time', 'region', 'comunity', 'city', 'aditional_info' ];
 	
 	
 	/**

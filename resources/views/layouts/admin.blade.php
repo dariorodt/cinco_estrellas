@@ -294,6 +294,11 @@ desired effect
 							</li>
 						</ul>
 					</li>
+					<li id="config_menu">
+						<a href="{{ route('admin.config.show') }}">
+							<i class="fa fa-cogs"></i> <span>Configuración</span>
+						</a>
+					</li>
 				@endif
 			</ul>
 			<!-- /.sidebar-menu -->

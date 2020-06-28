@@ -63,7 +63,7 @@ class JobPosted extends Notification
 		// which is subsequently coded in a JSON string to be stored in the 
 		// data column of the notifications table.
 		return [
-			'message' => 'Un nuevo trabajo ha sido publicado para el servicio de '.$this->service->name,
+			'message' => 'Un nuevo trabajo ha sido publicado para el servicio de '.$this->order->service->name,
 		];
 	}
 	

@@ -83,7 +83,14 @@
 													</figure>
 												</div>
 												<div class="popular-listing-detail">
-													<h3><a href="listing-details.html">Servicio de {{ $this_order->service->name }}</a></h3>
+													<h3>
+														<a href="">
+															{{ $this_order->service->name }} 
+															@if ($this_order->is_express)
+																<span class="badge badge-default">Express</span>
+															@endif
+														</a>
+													</h3>
 													<p>{{ $this_order->aditional_info }}</p>
 												</div>
 												<div class="popular-listing-add">

@@ -307,6 +307,9 @@
 															<p>
 																<b>Costo diurno:</b> {{ $service_worker->pivot->day_cost }} <br>
 																<b>Costo nocturno:</b> {{ $service_worker->pivot->night_cost }} <br>
+																@if ($order->is_express)
+																	<b>Recargo express:</b> {{ $express_percentage }}% <br>
+																@endif
 																<b>{{ $service_worker->pivot->visit_required? 'Visita requerida' : 'No requiere visita' }}</b>
 															</p>
 															<a class="btn btn-primary btn-xs b_m20" href="{{ route('user.order.hire', [$order, $application->worker]) }}" title="Contratar">Contratar</a><p></p>

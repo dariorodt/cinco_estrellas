@@ -24,13 +24,14 @@ class JobController extends Controller
 	}
 	
 	/**
-	 * Show User Job List
+	 * Shows the list of posted jobs in which the job category matches with any 
+	 * of the service categories defined by this worker.
 	 * 
 	 * @return \Illuminate\Http\Response Response class instance
 	 */
 	public function index()
 	{
-		// Set JobPosted notifications as readed if any
+		// Set JobPosted notifications as read if any
 		foreach (Auth::user()->unreadNotifications->where('type', 'App\Notifications\JobPosted') as $notification) {
 			$notification->markAsRead();
 		}
