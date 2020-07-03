@@ -102,10 +102,24 @@
 									<td><strong>Costo por día</strong></td>
 									<td>{{ number_format($worker_service->pivot->day_cost, 0) }} pesos</td>
 								</tr>
+								
+								@if ($order->is_express)
+								<tr>
+									<td><strong>Recargo express</strong></td>
+									<td>{{ $express_percentage }}%</td>
+								</tr>
 								<tr>
 									<td><strong>Costo total a pagar:</strong></td>
 									<td>{{ number_format($amount, 0) }} pesos</td>
 								</tr>
+								@else
+								<tr>
+									<td><strong>Costo total a pagar:</strong></td>
+									<td>{{ number_format($amount, 0) }} pesos</td>
+								</tr>
+								@endif
+								
+								
 							</tbody>
 						</table>
 						<div class="m_t30">

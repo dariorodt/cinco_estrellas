@@ -48,7 +48,8 @@ class ServiceController extends Controller
 	 * @return \Illuminate\Http\Response Response class instance
 	 */
 	public function create()
-	{	
+	{
+		//dd(Service::all());
 		return view('worker.service-create', [
 			'worker' => Auth::user(),
 			'services' => Service::all(),

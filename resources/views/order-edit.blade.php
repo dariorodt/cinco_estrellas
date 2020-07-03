@@ -305,8 +305,8 @@
 																$service_worker = $application->worker->services->find($order->service_id);
 															@endphp
 															<p>
-																<b>Costo diurno:</b> {{ $service_worker->pivot->day_cost }} <br>
-																<b>Costo nocturno:</b> {{ $service_worker->pivot->night_cost }} <br>
+																<b>Costo diurno:</b> {{ number_format($service_worker->pivot->day_cost, 0, ',', '.') }} <br>
+																<b>Costo nocturno:</b> {{ number_format($service_worker->pivot->night_cost, 0, ',', '.') }} <br>
 																@if ($order->is_express)
 																	<b>Recargo express:</b> {{ $express_percentage }}% <br>
 																@endif
