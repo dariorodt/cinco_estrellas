@@ -89,14 +89,14 @@
 										<div class="col-md-4 form-group">
 											<div class="intro">
 												<label for="day_cost">VALOR HORA DIURNO</label>
-												<input class="form-control" id="valor_diurno" name="day_cost" type="text" placeholder="Ingrese VALOR" required value="{{ $service->pivot->day_cost }}">
+												<input class="form-control" id="valor_diurno" name="day_cost" type="text" placeholder="Ingrese valor" required value="{{ number_format($service->pivot->day_cost, 0, ',', '.') }}">
 											</div>
 										</div>
 										
 										<div class="col-md-4 form-group">
 											<div class="intro">
 												<label for="night_cost">VALOR HORA NOCTURNO</label>
-												<input class="form-control" id="valor_nocturno" name="night_cost" type="text" placeholder="Ingrese VALOR" required value="{{ $service->pivot->night_cost }}">
+												<input class="form-control" id="valor_nocturno" name="night_cost" type="text" placeholder="Ingrese valor" required value="{{ number_format($service->pivot->night_cost, 0, ',', '.') }}">
 											</div>
 										</div>
 										

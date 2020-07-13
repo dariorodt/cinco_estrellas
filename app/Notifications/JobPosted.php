@@ -76,7 +76,7 @@ class JobPosted extends Notification
 	public function toNexmo($notifiable)
 	{
 		return (new NexmoMessage)
-				->content('Un nuevo trabajo ha sido publicado para el servicio de '.$this->service->name)
+				->content('Un nuevo trabajo ha sido publicado para el servicio de '.$this->order->service->name)
 				->from('Cinco Estrellas');
 	}
 }
