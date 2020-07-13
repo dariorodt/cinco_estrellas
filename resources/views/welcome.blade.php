@@ -41,7 +41,14 @@
 					<div id="directory-category-slider" class="owl-carousel owl-theme">
 						@foreach ($services as $service)
 							<div class="item">
-								<div class="directory-category-box text-center resturent"> <span><i class="fa {{ $service->fa_icon }}" aria-hidden="true"></i></span>
+								<div class="directory-category-box text-center resturent"> 
+									<span>
+										@if ($service->icon)
+											<img class="img-circle" src="{{ $service->icon }}" alt="">
+										@else
+											<i class="fa {{ $service->fa_icon }}" aria-hidden="true"></i>
+										@endif
+									</span>
 									<a href="{{ route('user.order.create') }}">
 										<h3>{{ $service->name }}</h3>
 									</a>
