@@ -44,7 +44,12 @@
 								<div class="directory-category-box text-center resturent"> 
 									<span>
 										@if ($service->icon)
-											<img class="img-circle" src="{{ $service->icon }}" alt="">
+											<img class="img-circle" src="{{ $service->icon }}" 
+											     style="
+											       width: 100%;
+											       height: 100%;
+											       object-fit: cover;
+											     ">
 										@else
 											<i class="fa {{ $service->fa_icon }}" aria-hidden="true"></i>
 										@endif
