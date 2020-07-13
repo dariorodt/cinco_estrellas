@@ -99,4 +99,15 @@ class SiteController extends Controller
 			'terms_conditions' => $terms_conditions,
 		]);
 	}
+	
+	public function mission_vission()
+	{
+		$mission_text = Storage::get('mission.txt');
+		$vission_text = Storage::get('vission.txt');
+		
+		return view('mission-vission', [
+			'mission_text' => $mission_text,
+			'vission_text' => $vission_text,
+		]);
+	}
 }

@@ -252,4 +252,57 @@ class DashboardController extends Controller
 		
 		return back();
 	}
+	
+	public function mission()
+	{
+		$mission_text = Storage::get('mission.txt');
+		
+		return view('admin.mission', ['mission_text' => $mission_text]);
+	}
+	
+	
+	public function mission_edit()
+	{
+		$mission_text = Storage::get('mission.txt');
+		
+		return view('admin.mission-edit', [
+			'mission_text' => $mission_text,
+		]);
+	}
+	
+	
+	public function mission_store(Request $request)
+	{
+		Storage::put('mission.txt', $request->text);
+		
+		return back();
+	}
+	
+	
+	public function vission()
+	{
+		$vission_text = Storage::get('vission.txt');
+		
+		return view('admin.vission', ['vission_text' => $vission_text]);
+	}
+	
+	
+	public function vission_edit()
+	{
+		$vission_text = Storage::get('vission.txt');
+		
+		return view('admin.vission-edit', [
+			'vission_text' => $vission_text,
+		]);
+	}
+	
+	
+	public function vission_store(Request $request)
+	{
+		Storage::put('vission.txt', $request->text);
+		
+		return back();
+	}
+	
+	
 }

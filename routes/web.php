@@ -15,6 +15,7 @@ Route::get('offer', 'SiteController@offer')->name('offer');
 Route::get('contact', 'SiteController@contact')->name('contact');
 Route::get('privacy-policy', 'SiteController@privacy')->name('privacy');
 Route::get('terms-conditions', 'SiteController@terms')->name('terms');
+Route::get('mission-vission', 'SiteController@mission_vission')->name('mission-vission');
 
 Route::get('password', function() {
     dd(Hash::make(request('password')));
@@ -268,6 +269,14 @@ Route::prefix('/admin')->group(function() {
 	Route::get('content/terms', 'Admin\DashboardController@terms')->name('admin.terms');
 	Route::get('content/terms/edit', 'Admin\DashboardController@terms_edit')->name('admin.terms.edit');
 	Route::post('content/terms/store', 'Admin\DashboardController@terms_store')->name('admin.terms.store');
+	
+	Route::get('content/mission', 'Admin\DashboardController@mission')->name('admin.mission');
+	Route::get('content/mission/edit', 'Admin\DashboardController@mission_edit')->name('admin.mission.edit');
+	Route::post('content/mission/store', 'Admin\DashboardController@mission_store')->name('admin.mission.store');
+	
+	Route::get('content/vission', 'Admin\DashboardController@vission')->name('admin.vission');
+	Route::get('content/vission/edit', 'Admin\DashboardController@vission_edit')->name('admin.vission.edit');
+	Route::post('content/vission/store', 'Admin\DashboardController@vission_store')->name('admin.vission.store');
 
 	// User administration
 	Route::get('users/dash', 'Admin\UserController@dash')->name('admin.users.dash');

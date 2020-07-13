@@ -98,7 +98,7 @@
 								<li id="start-menu"><a href="{{ url('/') }}">Inicio</a></li>
 								<li id="services-menu"><a href="{{ url('services') }}">Servicios</a></li>
 								<li id="how-it-works-menu"><a href="{{ url('how-it-works') }}">Cómo Funciona</a></li>
-								<li id="worker-menu"><a href="{{ url('worker') }}">Ofrecer Servicios</a></li>
+								<li id="worker-menu"><a href="{{ url('mission-vission') }}">Misión y Visión</a></li>
 								<li id="contact-menu"><a href="{{ url('contact') }}">Ayuda</a></li>
 							</ul>
 						</div>
@@ -134,7 +134,7 @@
 						<li><a href="{{ url('/') }}">Inicio</a></li>
 						<li><a href="{{ url('services') }}">Servicios</a></li>
 						<li><a href="{{ url('how-it-works') }}">Cómo Funciona</a></li>
-						<li><a href="{{ url('worker') }}">Ofrecer Servicios</a></li>
+						<li><a href="{{ url('mission-vission') }}">Misión y Visión</a></li>
 						<li><a href="{{ url('contact') }}">Contacto</a></li>
 					</ul>
 				</div>

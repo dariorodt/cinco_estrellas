@@ -292,6 +292,12 @@ desired effect
 							<li id="terms_menu">
 								<a href="{{ route('admin.terms') }}"><i class="fa fa-circle-o"></i> Términos y condiciones</a>
 							</li>
+							<li id="mission_menu">
+								<a href="{{ route('admin.mission') }}"><i class="fa fa-circle-o"></i> Misión</a>
+							</li>
+							<li id="vission_menu">
+								<a href="{{ route('admin.vission') }}"><i class="fa fa-circle-o"></i> Visión</a>
+							</li>
 						</ul>
 					</li>
 					<li id="config_menu">

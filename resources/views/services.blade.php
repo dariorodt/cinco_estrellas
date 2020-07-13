@@ -42,10 +42,10 @@
 							</span> --}}
 							@if ($service->icon)
 							<img src="{{ asset($service->icon) }}" alt="Service image"
-							     style="width: 100%; height: auto; object-fit: cover;">
+							     style="width: 100%; height: 160px; object-fit: cover;">
 							@else
 							<img src="{{ asset('images/best-thing-6.jpg') }}" alt="Service image"
-							     style="width: 100%; height: auto; object-fit: cover;">
+							     style="width: 100%; height: 160px; object-fit: cover;">
 							@endif
 							
 							<a href="{{ route('home') }}">
