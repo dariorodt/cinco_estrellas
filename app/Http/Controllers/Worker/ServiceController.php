@@ -58,7 +58,13 @@ class ServiceController extends Controller
 	
 	public function store(Request $request)
 	{
-		//dd($request->all());
+		$services = Auth::user()->services;
+		
+		if($services->contains($request->service))
+		{
+			$service = Service::find($request->service)->name;
+			return back()->with('warning', 'Usted ya tiene el servicio "'.$service.'".');
+		}
 		
 		// Validate input (only day_cost & night_cost)
 		$this->validate($request, [
